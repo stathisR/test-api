@@ -33,6 +33,15 @@ app.get('/ingredients', (req, res) =>{
   res.json(ingredients);
 });
 
+app.post('/ingredients', (req, res) => {
+  const { username } = req.body;
+  if (username === 'stathis') {
+    res.json(ingredients);
+  } else {
+    res.status(401).json('Unauthorized user');
+  }
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);
