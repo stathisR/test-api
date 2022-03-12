@@ -23,6 +23,10 @@ const ingredients = [
   }
 ];
 
+app.get('/', (req, res) => {
+  res.send('Server is running!');
+});
+
 app.get('/ingredients', (req, res) =>{
   res.send(ingredients);
 });
